@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estima el margen de un producto en Amazon.es, consulta las fuentes de las tarifas FBA y aprende a decidir cuándo ampliar Amazon Ads según el margen y el stock.">
+  <title>Amazon Boost Lab · Margen, tarifas FBA y decisiones en Amazon</title>
+  <link rel="icon" href="../assets/brand-symbol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lab.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="masthead">
+    <div class="shell header-inner">
+      <a class="brand" href="lab.html">
+        <img src="../assets/brand-symbol.svg" alt="" width="39" height="39">
+        <span>Amazon Boost<span class="accent">.</span> <small>LAB</small></span>
+      </a>
+      <nav aria-label="Secciones del laboratorio">
+        <a href="#respuestas">Preguntas</a>
+        <a href="#fuentes">Fuentes</a>
+        <a href="metodo.html">Método</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="shell hero-grid">
+        <div>
+          <p class="kicker"><span></span> Laboratorio de Amazon Boost</p>
+          <h1 id="titulo">¿Cuánto margen te deja vender en <em>Amazon.es?</em></h1>
+          <p class="hero-answer">Para estimar el margen por unidad, resta al ingreso sin IVA el coste del producto, las comisiones, la logística, la publicidad y los demás gastos imputados a esa venta. Con el precio, la categoría, las medidas y el peso del producto embalado, la calculadora estima las tarifas de Amazon aplicables y desglosa cuánto queda con los gastos que declares.</p>
+          <div class="actions">
+            <a class="button button-primary" href="index.html">Probar la calculadora <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="metodo.html">Ver cómo trabajamos</a>
+          </div>
+          <p class="hero-note">Amazon.es · Logística de Amazon en España (FBA) o envío propio (FBM)</p>
+        </div>
+
+        <aside class="laptop-stage" aria-labelledby="titulo-tarjeta">
+          <div class="laptop">
+            <img class="laptop-frame" src="../assets/macbook-graphite-frame-lossless.webp" width="1635" height="962" fetchpriority="high" alt="">
+            <div class="laptop-screen">
+              <div class="screen-topbar">
+                <span><strong>Amazon Boost<span class="accent">.</span></strong> Lab</span>
+                <span class="screen-market">ES</span>
+              </div>
+              <div class="screen-body">
+                <p class="card-label">Ejemplo con datos ficticios</p>
+                <p class="card-question" id="titulo-tarjeta">Hay margen. ¿Subimos el presupuesto?</p>
+                <dl class="metrics">
+                  <div class="metric-stock">
+                    <dt>Cobertura de stock</dt><dd>14 <span>días</span></dd>
+                    <span class="metric-bar" aria-hidden="true"></span>
+                  </div>
+                  <div class="metric-replenishment">
+                    <dt>Plazo de reposición</dt><dd>35 <span>días</span></dd>
+                    <span class="metric-bar" aria-hidden="true"></span>
+                  </div>
+                </dl>
+                <p class="decision"><span aria-hidden="true">→</span> Confirma la reposición antes de aumentar el presupuesto.</p>
+              </div>
+            </div>
+          </div>
+          <a class="card-link" href="#presupuesto">Ver el razonamiento <span aria-hidden="true">↓</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="shell answers" id="respuestas" aria-labelledby="titulo-respuestas">
+      <p class="section-tag">01 / Preguntas y respuestas</p>
+      <h2 id="titulo-respuestas">Tres preguntas antes de invertir.</h2>
+      <div class="answer-grid">
+        <article class="answer" id="tarifas">
+          <p class="topic">01 · Tarifas</p>
+          <h3>¿Qué tarifas de Amazon FBA se incluyen en el cálculo?</h3>
+          <p>La calculadora de Amazon Boost Lab estima la comisión por venta, la tarifa de logística FBA, el recargo aplicable y el almacenamiento en España. El precio y la categoría determinan la comisión. Las medidas y el peso del producto embalado ayudan a identificar el tramo logístico.</p>
+          <p class="reference">Fuentes para este cálculo. <a href="#fuente-comisiones">Comisiones por categoría</a> y <a href="#fuente-logistica">tablas oficiales de logística y almacenamiento</a>.</p>
+        </article>
+
+        <article class="answer" id="bajo-precio">
+          <p class="topic">02 · Elegibilidad</p>
+          <h3>¿Cómo sé si mi producto puede acogerse a FBA de bajo precio?</h3>
+          <p>Comprueba el límite de precio de su categoría y las condiciones de tamaño y peso del producto embalado. La calculadora de Amazon Boost Lab cruza esos datos para estimar si corresponde el tramo de bajo precio en Amazon.es.</p>
+          <p class="reference">Fuente para esta comprobación. <a href="#fuente-bajo-precio">Condiciones oficiales de FBA de bajo precio</a>.</p>
+        </article>
+
+        <article class="answer answer-featured" id="presupuesto">
+          <div>
+            <p class="topic">03 · Decisión</p>
+            <h3>¿Cuándo conviene subir el presupuesto de Amazon Ads?</h3>
+            <p>Antes de ampliar Amazon Ads, comprueba cuánto margen queda tras la publicidad y si el inventario puede cubrir las ventas hasta la próxima reposición. Si la cobertura es menor que el plazo de reposición, confirma cuándo habrá más unidades disponibles y revisa qué campañas priorizar antes de invertir más.</p>
+            <p class="reference">Criterio de Amazon Boost. <a href="../examples/decision-conectada.md">Ejemplo con datos ficticios y razonamiento completo</a>.</p>
+          </div>
+          <div class="worked-example">
+            <p class="topic">Ejemplo ilustrativo</p>
+            <p class="equation">140 unidades ÷ 10 al día <strong>= 14 días de cobertura</strong></p>
+            <p>La reposición tarda 35 días y la próxima entrega está por confirmar. Al ritmo supuesto, faltan 21 días de cobertura respecto al plazo de reposición.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="source-section" id="fuentes" aria-labelledby="titulo-fuentes">
+      <div class="shell source-grid">
+        <div class="source-intro">
+          <p class="section-tag">02 / Fuentes y alcance</p>
+          <h2 id="titulo-fuentes">De dónde sale cada dato.</h2>
+          <p>Amazon publica las tarifas y condiciones. Amazon Boost documenta cómo las aplica el estimador y cómo utiliza el margen y el stock para decidir.</p>
+          <p class="source-date">Catálogo de tarifas revisado el 5 de noviembre de 2026. El estimador utiliza esa versión para fechas entre el 1 de julio y el 31 de diciembre de 2026.</p>
+        </div>
+        <div class="source-list">
+          <article class="source" id="fuente-comisiones">
+            <span class="source-number" aria-hidden="true">01</span>
+            <div>
+              <h3>Comisiones por venta y planes</h3>
+              <p>La tabla de precios de Amazon España publica porcentajes, mínimos, tramos por categoría y cuotas de vendedor. El estimador utiliza esos tramos para calcular la comisión por referencia.</p>
+              <a href="https://sell.amazon.es/precios">Amazon España · Precios para vender <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="source" id="fuente-logistica">
+            <span class="source-number" aria-hidden="true">02</span>
+            <div>
+              <h3>Logística FBA, recargos y almacenamiento</h3>
+              <p>El tarifario europeo incluye las tablas de logística aplicables a España. La documentación del estimador identifica el tramo, el recargo y los supuestos del cálculo de almacenamiento.</p>
+              <div class="source-links">
+                <a href="https://m.media-amazon.com/images/G/02/sell/images/261014-FBA-Rate-Card-ES.pdf#page=6">PDF de Amazon · Logística general, pág. 6 ↗</a>
+                <a href="https://m.media-amazon.com/images/G/02/sell/images/261014-FBA-Rate-Card-ES.pdf#page=8">Categorías seleccionadas, pág. 8 ↗</a>
+                <a href="https://m.media-amazon.com/images/G/02/sell/images/261014-FBA-Rate-Card-ES.pdf#page=20">Almacenamiento, pág. 20 ↗</a>
+              </div>
+            </div>
+          </article>
+          <article class="source" id="fuente-bajo-precio">
+            <span class="source-number" aria-hidden="true">03</span>
+            <div>
+              <h3>FBA de bajo precio</h3>
+              <p>Amazon detalla las condiciones del programa. El estimador usa la tabla del programa para verificar precio, categoría y medidas del producto embalado.</p>
+              <div class="source-links">
+                <a href="https://sell.amazon.es/tarifas-precio-bajo-logistica-de-amazon">Amazon España · Condiciones del programa ↗</a>
+                <a href="https://m.media-amazon.com/images/G/02/sell/images/261014-FBA-Rate-Card-ES.pdf#page=5">PDF de Amazon · Tramos de bajo precio, pág. 5 ↗</a>
+              </div>
+            </div>
+          </article>
+          <article class="source" id="fuente-metodo">
+            <span class="source-number" aria-hidden="true">04</span>
+            <div>
+              <h3>Cálculo y método de Amazon Boost</h3>
+              <p>La ficha del estimador explica los servicios digitales, las hipótesis de IVA y publicidad, los costes que debes aportar y los productos fuera de cobertura. El dossier desarrolla el proceso de diagnóstico y la revisión de decisiones.</p>
+              <div class="source-links">
+                <a href="../docs/estimador-producto.md">Ficha del estimador y fuentes ↗</a>
+                <a href="metodo.html">Dossier del método ↗</a>
+                <a href="https://amznboost.es/servicios/gestion-de-cuenta/">Amazon Boost · Gestión de cuentas ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer">
+    <span>Amazon Boost Lab</span>
+    <a href="#contenido">Volver arriba ↑</a>
+  </footer>
+</body>
+</html>

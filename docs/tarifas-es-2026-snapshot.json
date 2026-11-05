@@ -1,0 +1,15 @@
+{
+  "catalogueVersion": "ES-2026.11.05",
+  "reviewed": "2026-11-05",
+  "marketplace": "ES",
+  "scope": "FBA local con inventario en España o FBM; categorías implementadas en el catálogo",
+  "referencePeriod": {"from": "2026-07-01", "through": "2026-12-31"},
+  "officialPdf": "https://m.media-amazon.com/images/G/02/sell/images/261014-FBA-Rate-Card-ES.pdf",
+  "downloadSha256": "5278d419af2bf390f02966897df0e29b5f04027b176797acbc0bf3874c249b1b",
+  "pagesInspectedVisually": [5, 6, 8, 9],
+  "additionalSectionsRead": ["Almacenamiento", "Referencia", "Planes", "Notas de recargos"],
+  "fuelSurcharge": {"before20261102": 0.015, "from20261102": 0.02, "includedInBaseRows": false},
+  "reviewMethod": "Transcripción manual de la columna ES y revisión de notas; pruebas de reglas y fronteras. No es validación contra una cuenta ni consulta de ASIN en tiempo real.",
+  "originalPdfRedistributed": false,
+  "limitations": ["El país y categoría tarifaria deben ser correctos", "Las tablas no se actualizan automáticamente", "Redondeo de incrementos en gran tamaño modelado proporcionalmente y pendiente de confirmar para el ASIN", "Programas especiales y recargos de cuenta fuera del alcance descrito"]
+}

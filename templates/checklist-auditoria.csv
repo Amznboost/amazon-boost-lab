@@ -1,0 +1,11 @@
+area,pregunta,evidencia,estado,responsable,siguiente_paso
+Alcance,"¿Qué cuenta, mercado, productos y decisión cubrimos?","Ficha de alcance y periodo",pendiente,,
+Datos,"¿Moneda, fechas y definiciones son comparables?","Registro de fuentes",pendiente,,
+Economía,"¿Qué queda después de los costes incluidos?","Ingresos y partidas reconciliadas",pendiente,,
+Publicidad,"¿Qué función y resultados tiene cada campaña?","Informes con ventana de atribución",pendiente,,
+Conversión,"¿La ficha explica producto y condiciones de compra?","Listing e imágenes fechados",pendiente,,
+Catálogo,"¿La oferta y las variantes permiten comprar correctamente?","Estado y avisos pertinentes",pendiente,,
+Stock,"¿La disponibilidad sostiene el siguiente paso?","Inventario y reposición confirmada",pendiente,,
+Incidencias,"¿Hay una restricción que deba resolverse antes?","Notificación y estado de cuenta",pendiente,,
+Equipo,"¿Quién ejecuta y quién aprueba?","Responsabilidades acordadas",pendiente,,
+Seguimiento,"¿Cuándo y cómo se comprobará el cambio?","Métrica y próxima revisión",pendiente,,

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Herramienta local de Amazon Boost para entender ventas, costes y contribución de una cuenta Amazon.">
+  <title>Amazon Boost Lab · Ventas con contexto</title>
+  <link rel="icon" href="/assets/brand-symbol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/web/style.css">
+  <script type="module" src="/web/app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#calculadora">Ir a la calculadora</a>
+  <header class="header wrap">
+    <a class="brand" href="/" aria-label="Amazon Boost Lab, inicio"><img src="/assets/brand-symbol.svg" alt="" width="42" height="42"><span>Amazon Boost<span class="orange">.</span> <span class="lab">LAB</span></span></a>
+    <span class="status"><span aria-hidden="true">●</span> Vista local · 0.2.0</span>
+  </header>
+  <main>
+    <section class="hero wrap">
+      <div><p class="eyebrow">Método, datos y decisiones</p><h1>Las ventas cuentan una parte.<br><span>El margen, la que falta.</span></h1><p class="lead">Antes de decidir cuánto invertir, entiende qué queda después de producto, logística, publicidad y gestión.</p><a class="button" href="#calculadora">Revisar los números <span aria-hidden="true">↘</span></a></div>
+      <aside class="formula" aria-label="Cómo calculamos la contribución"><span class="tiny">LA CUENTA, EN ORDEN</span><p>Ingresos netos</p><p class="subtract">− Costes variables</p><p class="subtract">− Publicidad</p><p class="subtract">− Costes fijos</p><p class="total">= Contribución</p><span class="note">Una base clara. Sin confundir facturación con beneficio.</span></aside>
+    </section>
+    <div class="trust wrap"><span>Sin conectar tu cuenta</span><span>Sin enviar tus importes</span><span>Fórmulas documentadas</span></div>
+    <nav class="lab-nav wrap" aria-label="Método y herramientas"><a href="/web/metodo.html">Cómo trabaja Amazon Boost ↗</a><a href="#calculadora">Calculadora de contribución ↓</a><a href="/web/datos.html">Comprobador de datos para estudios ↗</a></nav>
+    <section id="calculadora" class="workspace wrap" aria-labelledby="calculator-title">
+      <div class="section-head"><div><p class="eyebrow">01 / Economía de la cuenta</p><h2 id="calculator-title">¿Qué deja realmente este periodo?</h2></div><button id="example" class="text-button" type="button">Cargar ejemplo sintético ↗</button></div>
+      <p class="intro">Introduce importes del mismo periodo y divisa, sin IVA recuperable. Los ingresos deben descontar las devoluciones. Evita contar un coste dos veces. Escribe 0 solo cuando sepas que ese coste es cero.</p>
+      <div class="calculator-layout">
+        <form id="account-form" class="panel">
+          <fieldset><legend>Define el periodo</legend><div class="fields three"><label>Desde<input name="start" type="date" required></label><label>Hasta<input name="end" type="date" required></label><label>Divisa<select name="currency"><option>EUR</option><option>USD</option><option>GBP</option></select></label></div></fieldset>
+          <fieldset><legend>Ventas y costes variables</legend><div class="fields two">
+            <label>Ingresos netos<input name="netRevenue" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Coste del producto vendido<input name="product" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Comisiones de Amazon<input name="amazonFees" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Logística de los pedidos<input name="fulfilment" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Envíos a almacén y almacenamiento<input name="inboundAndStorage" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Procesar devoluciones<input name="returnsProcessing" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Otros costes variables<input name="otherVariable" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+          </div><p class="help">Incluye las tasas logísticas en un único apartado. En devoluciones, añade solo el coste de procesarlas que no esté ya descontado.</p></fieldset>
+          <fieldset><legend>Publicidad y costes fijos</legend><div class="fields two">
+            <label>Gasto publicitario<input name="adSpend" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Honorarios de gestión<input name="agency" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Otros costes fijos del periodo<input name="otherFixed" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+          </div></fieldset>
+          <label class="checkbox"><input id="include-ads" name="includeAds" type="checkbox">También tengo las bases del informe publicitario</label>
+          <fieldset id="ads-fields" hidden disabled><legend>ACOS, TACOS y ROAS</legend><p class="help">Usaremos estas ventas para los ratios. No reemplazan los ingresos netos de arriba.</p><div class="fields two">
+            <label>Ventas totales del informe<input name="totalSales" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Ventas atribuidas a publicidad<input name="attributedSales" type="number" min="0" max="1000000000000" step="0.01" required inputmode="decimal"></label>
+            <label>Base de ventas e impuestos<input name="salesBasis" maxlength="200" required placeholder="Ej.: informe sin IVA; misma cuenta"></label>
+            <label>Ventana y criterio de atribución<input name="attributionWindow" maxlength="200" required placeholder="Ej.: ventana indicada en el informe"></label>
+          </div><p class="help">Describe solo el criterio. No incluyas datos personales ni identificadores de clientes.</p></fieldset>
+          <p id="account-error" class="error" role="alert" hidden></p>
+          <div class="actions"><button class="button" type="submit">Calcular contribución <span aria-hidden="true">↗</span></button><button class="text-button" id="clear" type="button">Vaciar datos</button></div>
+        </form>
+        <aside class="results" aria-labelledby="results-title">
+          <div class="result-header"><p class="eyebrow">La lectura de tu cuenta</p><h3 id="results-title">El resultado, con contexto.</h3></div>
+          <div id="result-empty" class="empty"><span aria-hidden="true">↙</span><p>Completa los datos o carga el ejemplo para ver la contribución y sus límites.</p></div>
+          <div id="account-results" hidden aria-live="polite" aria-atomic="true"></div>
+          <p class="result-foot">Es una contribución con los costes declarados. No equivale al beneficio neto contable ni al saldo disponible para retirar.</p>
+        </aside>
+      </div>
+      <p id="example-label" class="example-label" role="status" hidden>Ejemplo sintético: cifras didácticas, no resultados de un cliente ni tarifas de Amazon Boost. Si cambias los importes, vuelve a pulsar «Calcular contribución».</p>
+      <noscript><p class="error">La calculadora necesita JavaScript para operar en tu dispositivo. El método y las fórmulas siguen disponibles en la documentación.</p></noscript>
+    </section>
+    <section class="unit wrap" aria-labelledby="unit-title"><details><summary><span class="eyebrow">02 / Un producto</span><span id="unit-title">¿Y antes de invertir en un ASIN?</span><span aria-hidden="true">+</span></summary>
+      <p>Calcula el margen unitario antes de publicidad. El ACOS de equilibrio solo será comparable si el informe usa la misma base de ventas y costes. No incluye costes fijos.</p>
+      <form id="unit-form"><div class="fields unit-fields">
+        <label>Precio sin IVA<input name="priceExVat" type="number" min="0" max="1000000000000" step="0.01" required></label>
+        <label>Producto<input name="productCost" type="number" min="0" max="1000000000000" step="0.01" required></label>
+        <label>Comisiones<input name="amazonFees" type="number" min="0" max="1000000000000" step="0.01" required></label>
+        <label>Logística<input name="fulfilmentCost" type="number" min="0" max="1000000000000" step="0.01" required></label>
+        <label>Otros costes variables<input name="otherVariableCost" type="number" min="0" max="1000000000000" step="0.01" required></label>
+      </div><button type="submit" class="button secondary">Calcular margen unitario</button><p id="unit-error" class="error" role="alert" hidden></p></form><div id="unit-result" aria-live="polite"></div>
+    </details></section>
+    <section class="resources wrap"><p class="eyebrow">03 / Del dato a la decisión</p><h2>Un número aislado no es un diagnóstico.</h2><div class="resource-grid">
+      <a href="/methodology/diagnostico.md"><span>01</span><h3>Qué revisar y en qué orden</h3><p>Un procedimiento para conectar economía, publicidad, catálogo y stock.</p><b>Ver metodología ↗</b></a>
+      <a href="/docs/calculadora.md"><span>02</span><h3>De dónde sale cada resultado</h3><p>Fórmulas, bases y limitaciones para poder comprobar los cálculos.</p><b>Consultar fórmulas ↗</b></a>
+      <a href="/methodology/calidad-datos.md"><span>03</span><h3>Qué puedes comparar</h3><p>Periodos, devoluciones y atribución: primero, datos que encajen.</p><b>Revisar criterios ↗</b></a>
+    </div></section>
+    <section class="cta wrap"><div><p class="eyebrow">Amazon Boost · Agencia boutique</p><h2>¿Qué está limitando<br>tu cuenta de Amazon?</h2><p>Relacionamos los números con lo que ocurre en publicidad, fichas y operaciones. La auditoría inicial es gratuita y sin compromiso.</p></div><a class="button" href="https://amznboost.es/servicios/auditoria-de-cuenta/">Conocer la auditoría ↗</a></section>
+  </main>
+  <footer class="wrap"><span>Amazon Boost Lab · Preparación local</span><a href="https://amznboost.es/">amznboost.es ↗</a><p>Sin afiliación oficial con Amazon. Datos solo en esta pestaña; no se guardan por la aplicación al recargar. Las decisiones requieren revisar las fuentes y el contexto.</p></footer>
+</body>
+</html>

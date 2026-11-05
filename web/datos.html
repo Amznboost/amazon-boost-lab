@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>¿Tus datos permiten comparar? · Amazon Boost Lab</title>
+  <link rel="icon" href="/assets/brand-symbol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/web/style.css"><link rel="stylesheet" href="/web/datos.css">
+  <script type="module" src="/web/datos.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#comprobador">Ir al comprobador</a>
+  <header class="header wrap"><a class="brand" href="/" aria-label="Amazon Boost Lab, inicio"><img src="/assets/brand-symbol.svg" width="42" height="42" alt=""><span>Amazon Boost<span class="orange">.</span> <span class="lab">LAB</span></span></a><a class="back" href="/">← Estimador de producto</a></header>
+  <main>
+    <section class="data-hero wrap"><p class="eyebrow">Calidad de datos / Antes de sacar conclusiones</p><h1>Primero, datos que encajen.<br><span>Después, conclusiones.</span></h1><p class="lead">¿Cayeron las unidades por falta de stock o cambió algo más? Antes de comparar, comprueba qué sabes de cada día y de cada producto.</p>
+      <div class="data-principles"><div><b>01</b><strong>Un vacío no es cero.</strong><p>Conservamos los días ausentes como información pendiente.</p></div><div><b>02</b><strong>Sin ventas no significa sin stock.</strong><p>La disponibilidad necesita su propia fuente.</p></div><div><b>03</b><strong>Comparar no demuestra una causa.</strong><p>Precio, inversión y promociones también forman parte del contexto.</p></div></div>
+    </section>
+    <section id="comprobador" class="wrap data-workspace" aria-labelledby="data-title">
+      <div class="section-head"><div><p class="eyebrow">Una marca · Un mercado · Una divisa</p><h2 id="data-title">¿Qué necesita revisión?</h2></div><button class="text-button" type="button" id="study-example">Cargar ejemplo sintético ↗</button></div>
+      <p class="intro">Este comprobador utiliza una tabla preparada para el estudio. No pegues informes originales: usa alias de productos y fuentes. Todo se procesa en esta pestaña; los datos no se envían.</p>
+      <form id="study-form">
+        <div class="panel scope-panel"><fieldset><legend>Delimita los datos</legend><div class="fields scope-fields">
+          <label>Alias del conjunto<input name="datasetId" placeholder="D001" pattern="D[0-9]{3,6}" required maxlength="7"></label>
+          <label>Mercado<input name="marketplace" placeholder="ES" pattern="[A-Z]{2}" maxlength="2" required></label>
+          <label>Divisa<input name="currency" placeholder="EUR" pattern="[A-Z]{3}" maxlength="3" required></label>
+          <label>Zona horaria<input name="timeZone" placeholder="Europe/Madrid" required maxlength="100"></label>
+          <label>Desde<input name="start" type="date" required></label><label>Hasta<input name="end" type="date" required></label>
+        </div></fieldset>
+        <details id="definitions"><summary>Define las métricas y sus fuentes <span>Necesario para interpretar los avisos</span></summary>
+          <p class="help">Explica el criterio que realmente usa cada origen. Referencia los informes con S001, S002…; la correspondencia y los originales se conservan en privado.</p>
+          <div class="definition-grid">
+            <label>Cómo se mide la disponibilidad<textarea name="definition_availability" rows="3" maxlength="1000" required></textarea></label><label>Fuente de disponibilidad<input name="source_availability" placeholder="S001" pattern="S[0-9]{3,6}" maxlength="7" required></label>
+            <label>Qué unidades y qué fecha se utilizan<textarea name="definition_units" rows="3" maxlength="1000" required></textarea></label><label>Fuente de unidades<input name="source_units" placeholder="S002" pattern="S[0-9]{3,6}" maxlength="7" required></label>
+            <label>Cómo se asigna el gasto y trata el IVA<textarea name="definition_advertising" rows="3" maxlength="1000" required></textarea></label><label>Fuente de publicidad<input name="source_advertising" placeholder="S003" pattern="S[0-9]{3,6}" maxlength="7" required></label>
+            <label>Qué precio se observa y cómo trata el IVA<textarea name="definition_price" rows="3" maxlength="1000" required></textarea></label><label>Fuente de precio<input name="source_price" placeholder="S004" pattern="S[0-9]{3,6}" maxlength="7" required></label>
+          </div>
+        </details></div>
+        <div class="study-layout"><div class="panel"><label class="table-label">Observaciones por producto y día<textarea name="observations" id="observations" rows="15" spellcheck="false" autocapitalize="off" autocomplete="off" maxlength="2000000" required aria-describedby="csv-help"></textarea></label>
+          <p id="csv-help" class="help">CSV con comas y punto decimal. Columnas: date, product_id, availability, units_ordered, ad_spend, price, promotion, content_changed. Los valores admitidos se explican en la guía.</p>
+          <p id="study-example-note" class="example-label" hidden>Ejemplo sintético. No representa una cuenta ni resultados de un cliente. Incluye cambios deliberados de contexto para mostrar cómo se revisan.</p>
+          <div class="actions"><button type="submit" class="button">Comprobar datos ↗</button><button type="button" id="study-clear" class="text-button">Vaciar datos</button></div><p id="study-error" class="error" role="alert" hidden></p>
+        </div><aside class="results data-results" aria-labelledby="report-title"><div class="result-header"><p class="eyebrow">Revisión de estructura y contexto</p><h3 id="report-title">Qué podemos afirmar.</h3></div><div id="study-empty" class="empty"><span aria-hidden="true">↙</span><p>Completa el alcance y las observaciones, o prueba el ejemplo sintético.</p></div><div id="study-report" hidden aria-live="polite" aria-atomic="true"></div><p class="result-foot">Un resultado sin errores no verifica las fuentes, anonimiza los datos ni autoriza su publicación.</p></aside></div>
+      </form>
+      <noscript><p class="error">La comprobación necesita JavaScript para funcionar en tu dispositivo. Puedes consultar el formato y los criterios en la documentación.</p></noscript>
+    </section>
+    <section class="wrap data-reading"><div><p class="eyebrow">Siguiente paso</p><h2>Corregir la base.<br>No maquillar el resultado.</h2><p>El comprobador señala qué falta o qué cambia. La revisión de los informes originales, el alcance del análisis y los permisos siguen formando parte del trabajo.</p></div><div class="reading-links"><a href="/docs/validacion-estudio.md">Formato, criterios y limitaciones ↗</a><a href="/methodology/protocolo-estudio.md">Protocolo del estudio de disponibilidad ↗</a><a href="/methodology/calidad-datos.md">Cómo comparar periodos e informes ↗</a></div></section>
+  </main>
+  <footer class="wrap"><span>Amazon Boost Lab · Preparación local</span><a href="https://amznboost.es/servicios/auditoria-de-cuenta/">Auditoría inicial gratuita y sin compromiso ↗</a><p>Sin conexión con Seller Central ni afiliación oficial con Amazon. Usa una copia preparada y conserva los originales en privado. La herramienta no guarda las entradas al recargar.</p></footer>
+</body>
+</html>

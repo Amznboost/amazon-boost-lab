@@ -1,0 +1,17 @@
+{
+  "name": "amazon-boost-lab",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Metodología y herramientas documentadas para diagnosticar cuentas Amazon de marcas privadas.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build:method": "node scripts/build-method.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test": "node --test",
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check-project.mjs",
+    "calculate": "node scripts/calculate.mjs examples/cuenta-sintetica.json",
+    "validate:study": "node scripts/validate-study.mjs examples/estudio-sintetico/ficha.json examples/estudio-sintetico/observaciones.csv"
+  }
+}

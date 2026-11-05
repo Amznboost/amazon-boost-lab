@@ -1,0 +1,144 @@
+{
+  "version": "0.4.0",
+  "reviewedOn": "2026-11-05",
+  "language": "es",
+  "publicationStatus": "local_draft",
+  "editorialStatus": "procedure_draft_for_owner_review",
+  "organization": {
+    "name": "Amazon Boost",
+    "description": "Agencia boutique especializada en Amazon para marcas privadas en España y Europa.",
+    "website": "https://amznboost.es/",
+    "founder": "Sergio Porras de Román",
+    "email": "info@amznboost.es",
+    "sameAs": [
+      "https://www.linkedin.com/company/amznboost/"
+    ]
+  },
+  "scopeNote": "Los servicios se contrastan con el contenido vigente de la web. Los procedimientos y formatos son una propuesta documental, sin atribuir una implantación histórica auditada.",
+  "commercialAuthority": "https://amznboost.es/servicios/",
+  "procedures": [
+    {
+      "id": "incorporacion",
+      "title": "Incorporación y alcance",
+      "document": "methodology/agencia/01-incorporacion.md",
+      "serviceUrl": "https://amznboost.es/servicios/gestion-de-cuenta/",
+      "question": "¿Cómo empezamos y qué delego?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "diagnostico",
+      "title": "Diagnóstico de cuenta",
+      "document": "methodology/agencia/02-diagnostico.md",
+      "serviceUrl": "https://amznboost.es/servicios/auditoria-de-cuenta/",
+      "question": "¿Qué está frenando mi cuenta?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "gestion",
+      "title": "Gestión continuada",
+      "document": "methodology/agencia/03-gestion.md",
+      "serviceUrl": "https://amznboost.es/servicios/gestion-de-cuenta/",
+      "question": "¿Qué incluye la gestión mensual de Amazon?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "publicidad",
+      "title": "Amazon Ads",
+      "document": "methodology/agencia/04-publicidad.md",
+      "serviceUrl": "https://amznboost.es/servicios/gestion-de-ppc/",
+      "question": "¿Dónde tiene sentido invertir?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "contenido",
+      "title": "Listings y contenido visual",
+      "document": "methodology/agencia/05-contenido.md",
+      "serviceUrl": "https://amznboost.es/servicios/optimizacion-de-listados/",
+      "question": "¿Cómo mejoramos la explicación del producto?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "formacion",
+      "title": "Formación para empresas",
+      "document": "methodology/agencia/06-formacion.md",
+      "serviceUrl": "https://amznboost.es/servicios/formacion-amazon-empresas/",
+      "question": "¿Cómo aprende mi equipo con su propia cuenta?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "incidencias",
+      "title": "Incidencias y plan de acción",
+      "document": "methodology/agencia/07-incidencias.md",
+      "serviceUrl": "https://amznboost.es/servicios/desbloqueos-amazon/",
+      "question": "¿Cómo se prepara y se sigue una apelación?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "expansion",
+      "title": "Lanzamiento y expansión",
+      "document": "methodology/agencia/08-lanzamiento-expansion.md",
+      "serviceUrl": "https://amznboost.es/servicios/",
+      "question": "¿Qué falta antes de lanzar o ampliar mercados?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    },
+    {
+      "id": "seguimiento",
+      "title": "Seguimiento y continuidad",
+      "document": "methodology/agencia/09-seguimiento.md",
+      "serviceUrl": "https://amznboost.es/servicios/gestion-de-cuenta/",
+      "question": "¿Cómo sé qué se ha hecho y qué sigue pendiente?",
+      "serviceEvidence": "website_content",
+      "procedureEvidence": "documented_proposal",
+      "realClientData": false
+    }
+  ],
+  "readingOrder": [
+    "docs/agencia/README.md",
+    "methodology/agencia/01-incorporacion.md",
+    "methodology/agencia/02-diagnostico.md",
+    "methodology/agencia/03-gestion.md",
+    "methodology/agencia/04-publicidad.md",
+    "methodology/agencia/05-contenido.md",
+    "methodology/agencia/06-formacion.md",
+    "methodology/agencia/07-incidencias.md",
+    "methodology/agencia/08-lanzamiento-expansion.md",
+    "methodology/agencia/09-seguimiento.md",
+    "examples/decision-conectada.md",
+    "docs/agencia/preguntas.md",
+    "templates/agencia/README.md",
+    "docs/agencia/evidencias-y-limites.md"
+  ],
+  "templates": [
+    "templates/agencia/alcance.md",
+    "templates/agencia/accion.md",
+    "templates/agencia/informe.md",
+    "templates/agencia/sesion.md",
+    "templates/agencia/expediente.md",
+    "templates/agencia/traspaso.md"
+  ],
+  "syntheticExample": "examples/decision-conectada.md",
+  "evidence": "docs/agencia/evidencias-y-limites.md",
+  "excludedClaims": [
+    "guaranteed_ai_recommendation",
+    "guaranteed_sales",
+    "guaranteed_reactivation",
+    "unverified_team_size",
+    "unapproved_client_data"
+  ]
+}

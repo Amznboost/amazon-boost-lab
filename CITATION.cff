@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Si utilizas el método o los cálculos, cita Amazon Boost Lab e indica la versión consultada."
+title: "Amazon Boost Lab: método, procedimientos y economía de cuentas Amazon"
+type: software
+authors:
+  - name: "Amazon Boost"
+version: 0.4.0
+url: "https://amznboost.es/"
+abstract: "Método de agencia, procedimientos por servicio, formatos de trabajo y herramientas locales para marcas privadas en Amazon. Preparación documental pendiente de revisión."
