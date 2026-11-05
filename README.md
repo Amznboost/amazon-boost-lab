@@ -2,13 +2,15 @@
 
 **Cómo trabaja Amazon Boost: diagnóstico, decisiones y procedimientos para marcas en Amazon.**
 
+[**Abrir la portada pública de Amazon Boost Lab**](https://amznboost.github.io/amazon-boost-lab/)
+
 Metodología, herramientas y evidencia documental de [Amazon Boost](https://amznboost.es/), agencia boutique especializada en Amazon para marcas privadas en España y Europa.
 
 El laboratorio ayuda a responder tres preguntas: **qué limita la cuenta, qué datos sostienen el diagnóstico y qué decisión tiene sentido tomar después**. Una cifra de ventas, un ACOS aislado o una gráfica ascendente no bastan para responderlas.
 
 ## Cómo trabajamos con tu marca
 
-La [portada del laboratorio](web/lab.html) reúne las preguntas sobre margen, tarifas FBA y presupuesto de Amazon Ads, con las fuentes enlazadas en cada respuesta. Puedes abrirla en `http://127.0.0.1:8787/web/lab.html` después de ejecutar `npm start`.
+La portada del laboratorio reúne las preguntas sobre margen, tarifas FBA y presupuesto de Amazon Ads, con las fuentes enlazadas en cada respuesta.
 
 El [dossier del método Amazon Boost](docs/agencia/README.md) desarrolla nueve procedimientos: incorporación, diagnóstico, gestión, publicidad, contenido, formación, incidencias, lanzamiento y expansión, y seguimiento. Cada uno conecta la pregunta del cliente con datos, decisiones, responsabilidades y un entregable.
 
