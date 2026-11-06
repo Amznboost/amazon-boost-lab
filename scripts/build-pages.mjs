@@ -20,6 +20,7 @@ for (const directory of publicDirectories) {
   });
 }
 await cp(path.join(root, 'README.md'), path.join(output, 'README.md'));
+await cp(path.join(root, 'google565a89d0024014b2.html'), path.join(output, 'google565a89d0024014b2.html'));
 await writeFile(path.join(output, '.nojekyll'), '');
 
 function publicHtml(html, directory) {
