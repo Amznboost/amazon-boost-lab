@@ -1,5 +1,7 @@
 # Qué demuestra un caso y qué queda por comprobar
 
+La [landing de los casos](../web/casos.html) reúne el contexto, el trabajo y los resultados de ambos proyectos.
+
 Estas fichas documentan **dos casos publicados por Amazon Boost**, no un estudio representativo de vendedores de Amazon. La web sigue siendo la fuente editorial principal. El laboratorio añade cómo leer las cifras y qué datos serían necesarios para profundizar.
 
 | Pregunta | Ficha |

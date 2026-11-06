@@ -33,6 +33,7 @@ const landing = landingSource
   .replace('href="lab.html"', 'href="./"')
   .replaceAll('href="index.html"', 'href="web/index.html"')
   .replaceAll('href="metodo.html"', 'href="web/metodo.html"')
+  .replaceAll('href="casos.html"', 'href="web/casos.html"')
   .replace('href="lab.css"', 'href="web/lab.css"')
   .replace(/\b(href|src)="\.\.\//g, '$1="');
 await writeFile(path.join(output, 'index.html'), publicHtml(landing, ''));
