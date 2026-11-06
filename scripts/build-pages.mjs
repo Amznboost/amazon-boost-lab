@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
+const publicSite = new URL('https://amznboost.github.io/amazon-boost-lab/');
 const artifacts = path.join(root, 'artifacts');
 await mkdir(artifacts, { recursive: true });
 const output = await mkdtemp(path.join(artifacts, 'pages-'));
@@ -28,6 +29,11 @@ function publicHtml(html, directory) {
       `${attribute}="${directory === 'web' ? '../' : './'}${target}"`);
 }
 
+function withCanonical(html, url) {
+  if (!html.includes('</head>')) throw new Error(`Falta </head> en ${url}`);
+  return html.replace('</head>', `<link rel="canonical" href="${url}">\n</head>`);
+}
+
 const landingSource = await readFile(path.join(root, 'web/lab.html'), 'utf8');
 const landing = landingSource
   .replace('href="lab.html"', 'href="./"')
@@ -36,23 +42,30 @@ const landing = landingSource
   .replaceAll('href="casos.html"', 'href="web/casos.html"')
   .replace('href="lab.css"', 'href="web/lab.css"')
   .replace(/\b(href|src)="\.\.\//g, '$1="');
-await writeFile(path.join(output, 'index.html'), publicHtml(landing, ''));
+await writeFile(path.join(output, 'index.html'), withCanonical(publicHtml(landing, ''), publicSite));
 
 const webDirectory = path.join(output, 'web');
-for (const file of await readdir(webDirectory)) {
-  if (!file.endsWith('.html')) continue;
+const webPages = (await readdir(webDirectory)).filter(file => file.endsWith('.html'));
+const canonicalUrls = [publicSite];
+for (const file of webPages) {
   const target = path.join(webDirectory, file);
-  const html = file === 'lab.html'
+  const isLandingAlias = file === 'lab.html';
+  const canonical = isLandingAlias ? publicSite : new URL(`web/${file}`, publicSite);
+  const html = isLandingAlias
     ? '<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Amazon Boost Lab</title><meta http-equiv="refresh" content="0;url=../"></head><body><a href="../">Abrir Amazon Boost Lab</a></body></html>\n'
     : publicHtml(await readFile(target, 'utf8'), 'web')
       .replace('DOSSIER DE REVISIÓN', 'DOSSIER DEL MÉTODO')
       .replace('Preparación local · 5 de noviembre de 2026', 'Edición del 5 de noviembre de 2026')
       .replace('Documento local, sin publicación', 'Amazon Boost Lab');
-  await writeFile(target, html);
+  await writeFile(target, withCanonical(html, canonical));
+  if (!isLandingAlias) canonicalUrls.push(canonical);
 }
 
-const pages = ['index.html', ...await readdir(webDirectory).then(files =>
-  files.filter(file => file.endsWith('.html')).map(file => `web/${file}`))];
+const sitemapEntries = canonicalUrls.map(url => `  <url><loc>${url}</loc></url>`).join('\n');
+await writeFile(path.join(output, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`);
+
+const pages = ['index.html', ...webPages.map(file => `web/${file}`)];
 for (const file of pages) {
   const html = await readFile(path.join(output, file), 'utf8');
   for (const [, url] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
