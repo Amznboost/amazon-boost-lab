@@ -42,6 +42,7 @@ const landing = landingSource
   .replaceAll('href="metodo.html"', 'href="web/metodo.html"')
   .replaceAll('href="casos.html"', 'href="web/casos.html"')
   .replace('href="lab.css"', 'href="web/lab.css"')
+  .replace('</head>', '<meta name="msvalidate.01" content="A7C83052C6E6C42C9EDC41398DE807DB">\n</head>')
   .replace(/\b(href|src)="\.\.\//g, '$1="');
 await writeFile(path.join(output, 'index.html'), withCanonical(publicHtml(landing, ''), publicSite));
 
